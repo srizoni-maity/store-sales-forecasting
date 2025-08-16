@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>💎 Sales Forecast Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(ellipse at top left, #1e1e2f, #12121d);
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      padding-bottom: 60px;
+    }
+
+    h1.header-title {
+      text-align: center;
+      font-size: 2.8rem;
+      margin: 30px 0;
+      font-weight: 600;
+      color: #ffffff;
+      text-shadow: 0 0 10px #00ffe1, 0 0 20px #00ffe1;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 25px rgba(0, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 40px rgba(0, 255, 255, 0.4);
+      transform: scale(1.01);
+    }
+
+    .model-title {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #00ffd5;
+      text-shadow: 0 0 10px #00ffd5;
+    }
+
+    .accuracy-value {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #00ff99;
+      text-shadow: 0 0 8px #00ffcc;
+    }
+
+    .accuracy-card h4 {
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .emoji {
+      font-size: 1.6rem;
+      margin-right: 8px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      h1.header-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="header-title">📊 Sales Forecast Dashboard</h1>
+
+    <!-- Accuracy Cards -->
+    <div class="row text-center mb-5">
+      {% for model, acc in accuracy.items() %}
+      <div class="col-md-4 mb-4">
+        <div class="card accuracy-card">
+          <h4>{{ model }}</h4>
+          <div class="accuracy-value">{{ acc }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Prophet Forecast -->
+    <div class="card">
+      <div class="model-title">📈 Prophet Forecast</div>
+      <img src="{{ url_for('model_static', filename='prophet_forecast_store1_GROCERY_I.png') }}" alt="Prophet Forecast">
+    </div>
+
+    <!-- XGBoost Forecast -->
+    <div class="card">
+      <div class="model-title">📉 XGBoost Forecast</div>
+      <img src="{{ url_for('model_static', filename='xgb_forecast_store1_GROCERY_I.png') }}" alt="XGBoost Forecast">
+    </div>
+
+    <!-- LSTM Loss -->
+    <div class="card">
+      <div class="model-title">🧠 LSTM Loss Curve</div>
+      <img src="{{ url_for('model_static', filename='lstm_loss_curve_store1_GROCERY_I.png') }}" alt="LSTM Loss">
+    </div>
+  </div>
+
+</body>
+</html>
