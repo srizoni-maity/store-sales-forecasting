@@ -1,4 +1,5 @@
 # 📊 Sales Forecasting Dashboard with LSTM, Prophet & XGBoost
+![Sales Forecasting Banner]()
 
 An end-to-end MLOps project for **Time Series Forecasting** using real-world sales data from the [Kaggle Store Sales Forecasting Competition](https://www.kaggle.com/competitions/store-sales-time-series-forecasting).
 
