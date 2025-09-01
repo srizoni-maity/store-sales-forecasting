@@ -1,5 +1,5 @@
 # 📊 Sales Forecasting Dashboard with LSTM, Prophet & XGBoost
-![Sales Forecasting Banner]()
+![Sales Forecasting Banner](https://github.com/srizoni-maity/store-sales-forecasting/blob/main/Screenshot_1-9-2025_233241_127.0.0.1.jpeg)
 
 An end-to-end MLOps project for **Time Series Forecasting** using real-world sales data from the [Kaggle Store Sales Forecasting Competition](https://www.kaggle.com/competitions/store-sales-time-series-forecasting).
 
